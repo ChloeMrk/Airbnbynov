@@ -12,7 +12,7 @@
       <li><a href="#">Devenir un Hôte</a></li>
       <li><a href="#">Créer une expérience</a></li>
       <li><a href="#">Aide</a></li>
-      <li><a href="#">Connexion</a></li>
-      <li><a href="#">Inscription</a></li>
+      <li><a href="registration/connexion.php">Connexion</a></li>
+      <li><a href="registration/inscription.php">Inscription</a></li>
     </ul>
 </div>
