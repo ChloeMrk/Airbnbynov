@@ -15,7 +15,11 @@
 
     <body>
     <div class="top-nav clearfix">
+<<<<<<< HEAD
         <a href="../index.php">
+=======
+        <a href="index.php">
+>>>>>>> 8b1732378913208984b184d70d85cc4230b7e4da
             <img src="../assets/img/airbnb.svg" alt="airbnb" class="logo" />
         </a>
         <div id="nav-search-wrapper">
@@ -28,7 +32,11 @@
         <li><a href="#">Devenir un Hôte</a></li>
         <li><a href="#">Créer une expérience</a></li>
         <li><a href="#">Aide</a></li>
+<<<<<<< HEAD
         <li><a href="connexion.php">Connexion</a></li>
+=======
+        <li><a href="#">Connexion</a></li>
+>>>>>>> 8b1732378913208984b184d70d85cc4230b7e4da
         <li><a href="registration/inscription.php">Inscription</a></li>
         </ul>
 

@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<<<<<<< HEAD
     <script src="assets/js/function.js" async></script>
+=======
+    <script src="assets/js/function.js"></script>
+>>>>>>> 8b1732378913208984b184d70d85cc4230b7e4da
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
   </head>
