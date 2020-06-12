@@ -1,38 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>AirBnb</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="assets/js/function.js"></script>
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-  </head>
+<?php include("inc/header.inc.php")?>
   <body>
     <?php include("inc/nav.inc.php")?>
 
-      <div id="slider-wrapper">
-              <div id="slider-arrow-wrapper">
-                <div class="slide-arrow" id="left-arrow"><ion-icon name="chevron-back-outline" class="arrow"></ion-icon></div>
-                <div class="slide-arrow" id="right-arrow"><ion-icon name="chevron-forward-outline"class="arrow"></ion-icon></div>
-              </div>
+    
+   
+    <div class="wrapper">
 
-              
-      </div>
-      <div id="slides-wrapper">
-                <div class="slide active">
-                    #1
-                </div>
-                <div class="slide">
-                    #2
-                </div>
-                <div class="slide">
-                    #3
-                </div>
-              </div>
+<div class="carousel">
+
+  <button type="button" id="carousel-arrow-prev" class="carousel-arrow carousel-arrow-prev" arial-label="Image précédente"></button>
+  <button type="button" id="carousel-arrow-next" class="carousel-arrow carousel-arrow-next" arial-label="Image suivante"></button>
+
+  <img id="carousel-0" class="carousel-img carousel-img-displayed" src="assets/img/img1.jpeg" alt="Winter" />
+  <img id="carousel-1" class="carousel-img carousel-img-noDisplay" src="assets/img/img2.jpeg" alt="Sea" />
+  <img id="carousel-2" class="carousel-img carousel-img-noDisplay" src="assets/img/img3.jpeg" alt="Night" />
+  <img id="carousel-3" class="carousel-img carousel-img-noDisplay" src="assets/img/img4.jpeg" alt="Moutain" />
+  <img id="carousel-4" class="carousel-img carousel-img-noDisplay" src="assets/img/img5.jpeg" alt="Desert" />
+
+</div>
+
+</div>
     
   </body>
 </html>
+

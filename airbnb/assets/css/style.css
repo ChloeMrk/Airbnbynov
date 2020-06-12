@@ -8,12 +8,6 @@ body {
   color: #ccc;
 }
 
-p {
-  font-size: 16px;
-  margin: 0;
-  padding: O;
-}
-
 a:link {
   font-size: 16px;
   text-decoration: none;
@@ -23,19 +17,6 @@ a:link {
 
 a:visited {
   text-decoration: none;
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-ol,
-li {
   margin: 0;
   padding: 0;
 }
@@ -118,73 +99,91 @@ ol {
   color: #484848;
 }
 
-#slider-wrapper {
+/* Container */
+
+.wrapper {
   width: 100%;
-  height: 72vh;
-  background-color: lightblue;
+  max-width: 90%;
+  margin: auto;
+  overflow: hidden;
+  position: fixed;
+  top: -20px;
+  left: 80px;
 }
 
-#slider-arrow-wrapper {
-  position: absolute;
-  width: 100vw;
-  height: 48px;
-  top: 50%;
-  margin-top: -24px;
-}
-
-.slide-arrow {
-  position: absolute;
-  width: 48px;
-  height: 48px;
-  margin: 0 16px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 48px;
-  -webkit-border-radius: 48px;
-  -moz-border-radius: 48px;
-  top: 50%;
-  margin-top: -24px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  text-align: center;
-  padding: -5px 0;
-  box-sizing: border-box;
-}
-
-.slide-arrow:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.arrow {
-  font-size: 30px;
-  vertical-align: middle;
-  margin: 13px 0;
-}
-#left-arrow {
-  left: 16px;
-}
-
-#right-arrow {
-  right: 16px;
-}
-
-#slides-wrapper {
+.carousel {
   position: relative;
   width: 100%;
-  height: 72vh;
-  top: 10%;
+  height: 0;
+  top: 100px;
+  padding-top: 56.25%;
+  background: #ddd;
 }
 
-.slide {
-  position: relative;
-  width: 100%;
-  height: 72vh;
+/* Images */
 
+.carousel-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  width: 100%;
+  -webkit-transition: opacity ease-out 0.5s;
+  transition: opacity ease-out 0.5s;
+}
+
+.carousel-img-displayed {
+  display: block;
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-img-hidden {
+  display: block;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-img-noDisplay {
   display: none;
 }
 
-.slide.active {
+/* Flèches de défilement */
+
+.carousel-arrow {
+  z-index: 3;
   display: block;
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 50%;
+  margin-top: -18px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #fff;
+  background-image: url("http://res.cloudinary.com/dnqehhgmu/image/upload/v1509720334/blue-arrow_jk1ydw.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  cursor: pointer;
+  -webkit-transition: background-size 0.15s ease-out;
+  transition: background-size 0.15s ease-out;
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus {
+  background-size: 22px 22px;
+}
+
+.carousel-arrow-next {
+  right: 20px;
+}
+
+.carousel-arrow-prev {
+  left: 20px;
+  -webkit-transform: rotateZ(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotateZ(180deg);
 }
