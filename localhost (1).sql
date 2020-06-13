@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : sam. 13 juin 2020 à 23:34
+-- Généré le : Dim 14 juin 2020 à 00:36
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.5
 
@@ -45,7 +45,7 @@ CREATE TABLE `annonces` (
 --
 
 INSERT INTO `annonces` (`id_annonces`, `type_logement`, `nbr_voyageur`, `prix`, `ville`, `adresse`, `cheminImg`, `delection_flag`) VALUES
-(1, 'Logement', 5, 4.5, 'Villepinte', 'boulevard circulaire', 'assets/img/5A0ECE48-460A-40C7-9ECF-DA5F69E2ADCC.jpeg', 0);
+(3, 'Studio', 2, 56, 'Villepinte', 'boulevard circulaire', 'assets/img/5CEC5878-0328-4E88-B848-53ED2684D911.jpeg', 0);
 
 -- --------------------------------------------------------
 
@@ -97,7 +97,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `annonces`
 --
 ALTER TABLE `annonces`
-  MODIFY `id_annonces` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_annonces` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `users`

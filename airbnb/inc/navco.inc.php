@@ -9,7 +9,7 @@
     </div>
 
     <ul>
-      <li><a href="annonces.php">Héberger des voyageurs</a></li>
+      <li><a href="annoncesform.php">Héberger des voyageurs</a></li>
       <li><a href="#">Créer une expérience</a></li>
       <li><a href="#">Aide</a></li>
       <li><a href="registration/connexion.php">Mon compte</a></li>

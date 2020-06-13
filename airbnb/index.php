@@ -1,10 +1,11 @@
 <?php include("inc/header.inc.php")?>
   <body>
     <?php include("inc/nav.inc.php")?>
+    <?php include("registration/inscriptionbd.php");?>
 
     
    
-    <div class="wrapper">
+<div class="wrapper">
 
 <div class="carousel">
 
@@ -18,8 +19,27 @@
   <img id="carousel-4" class="carousel-img carousel-img-noDisplay" src="assets/img/img5.jpeg" alt="Desert" />
 
 </div>
-
 </div>
+
+<?php 
+
+  $pdo = new PDO("mysql:host=localhost; dbname=registration", "root","",);
+  $result = $pdo->query("SELECT * FROM annonces WHERE delection_flag = 0");
+  while($annonce = $result -> fetch(PDO::FETCH_OBJ)){?>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><?php echo $annonce->ville?></h5>
+      <?php echo '<img src="assets/img'.$annonce->cheminImg.'" alt=""/>';?>
+
+    </div>
+  </div>
+
+
+  <?php }?>
+
+
+
     
   </body>
 </html>
