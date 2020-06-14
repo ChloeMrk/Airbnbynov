@@ -1,10 +1,8 @@
 <?php include("inc/header.inc.php")?>
-  <body>
-    <?php include("inc/nav.inc.php")?>
-    <?php include("registration/inscriptionbd.php");?>
-
-    
-   
+<body>
+  
+<?php include("inc/nav.inc.php")?>
+  
 <div class="wrapper">
 
 <div class="carousel">
@@ -27,16 +25,20 @@
   $result = $pdo->query("SELECT * FROM annonces WHERE delection_flag = 0");
   while($annonce = $result -> fetch(PDO::FETCH_OBJ)){?>
 
+<section class="product">
   <div class="card">
-    <div class="card-body">
-      <h5 class="card-title"><?php echo $annonce->ville?></h5>
-      <?php echo '<img src="assets/img'.$annonce->cheminImg.'" alt=""/>';?>
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $annonce->ville?></h5>
+        <?php echo '<img src="'.$annonce->cheminImg.'" alt=""/>';?>
 
+      </div>
     </div>
-  </div>
 
 
   <?php }?>
+
+</section>
+ 
 
 
 

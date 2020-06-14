@@ -44,8 +44,9 @@ ol {
 
 /*nav*/
 .top-nav {
-  position: fixed;
+  position: absolute;
   width: 100%;
+  top: 0;
   height: auto;
   background-color: white;
   border-bottom: 1px solid #ccc;
@@ -106,18 +107,17 @@ ol {
   max-width: 90%;
   margin: auto;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   top: 100px;
   left: 80px;
 }
 
 .carousel {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 0;
   top: 0px;
   padding-top: 56.25%;
-  background: #ddd;
 }
 
 /* Images */
@@ -130,7 +130,6 @@ ol {
   right: 0;
   max-width: 100%;
   width: 100%;
-  -webkit-transition: opacity ease-out 0.5s;
   transition: opacity ease-out 0.5s;
 }
 
@@ -168,7 +167,6 @@ ol {
   background-position: center;
   background-size: 16px 16px;
   cursor: pointer;
-  -webkit-transition: background-size 0.15s ease-out;
   transition: background-size 0.15s ease-out;
 }
 
@@ -183,12 +181,16 @@ ol {
 
 .carousel-arrow-prev {
   left: 20px;
-  -webkit-transform: rotateZ(180deg);
-  -ms-transform: rotate(180deg);
   transform: rotateZ(180deg);
 }
 
 .card {
-  position: fixed;
   top: 1000px;
+  display: inline-block;
+  margin: 80px;
+}
+
+.card-body {
+  width: 50%;
+  height: 50%;
 }
