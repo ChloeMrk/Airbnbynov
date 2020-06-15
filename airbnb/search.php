@@ -2,25 +2,18 @@
 <body>
   <?php include("inc/nav.inc.php")?>
 
-  
-<?php
-try{
-$bdd = new PDO("mysql:host=localhost;dbname=registration", 'root', '');
-$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  <?php 
+$pdo = new PDO("mysql:host=localhost; dbname=registration", "root","",);
+$annonces = $pdo->query('SELECT ville FROM annonces ORDER BY id DESC');
+if(isset($_GET['search']) && !empty($_GET['search'])){
+$search = htmlspecialchars($_GET['search']);
+$annonces = $pdo->query("SELECT ville FROM annonces WHERE ville LIKE '%$search%' ORDER BY id_annonces DESC");
+if($annonces->rowCount() == 0) {
+var_dump('boucle entrée');
+$annonces = $pdo->query("SELECT ville FROM annonces WHERE ville LIKE '%$search%'ORDER BY id_annonces DESC");
 }
-catch(Exception $e){
-echo $e->getMessage();
-}
-if(isset($_GET['user'])){
-$search = (String) trim($_GET['search']);
-$req = $bdd->prepare("SELECT * FROM annonces WHERE ville LIKE '%$search%' LIMIT 10");
-$s = $req->fetch(PDO::FETCH_OBJ);
-foreach($req as $r){
-?>
-<div style="margin-top: 20px 0; border-bottom: 2px solid #ccc"><?php $r['title'] . " " . $r['price'] ?></div>
-<?php
-}
-}
-?>
+} 
+?> 
+
 
 </body>

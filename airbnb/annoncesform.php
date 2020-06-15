@@ -23,7 +23,7 @@
 
         
         
-        $requeteSQL = "INSERT INTO annonces(type_logement, nbr_voyageur, prix, ville, adresse, cheminImg) VALUES('$_POST[type_logement]','$_POST[nbr_voyageur]','$_POST[prix]','$_POST[ville]','$_POST[adresse]','assets/img/$name')";
+        $requeteSQL = "INSERT INTO annonces(type_logement, nbr_voyageur, prix, ville, adresse, cheminImg, description) VALUES('$_POST[type_logement]','$_POST[nbr_voyageur]','$_POST[prix]','$_POST[ville]','$_POST[adresse]','assets/img/$name','$_POST[description]')";
         $result= $pdo->exec($requeteSQL);
         echo $requeteSQL;
         echo $result;
@@ -60,6 +60,11 @@
         <div class="form-group">
             <label for="titre">Photo</label>
             <input type="file" class="form-control-file" id="img" name="img[]">
+        </div>
+
+        <div class="form-group">
+            <label for="description_emplois">Description du logement</label>
+            <textarea rows="10" class="form-control" id="description" name="description"> </textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Enregistrer</button>

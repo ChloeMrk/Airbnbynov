@@ -23,19 +23,29 @@
 
   $pdo = new PDO("mysql:host=localhost; dbname=registration", "root","",);
   $result = $pdo->query("SELECT * FROM annonces WHERE delection_flag = 0");
-  while($annonce = $result -> fetch(PDO::FETCH_OBJ)){?>
+  ?>
 
 <section class="product">
-  <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><?php echo $annonce->ville?></h5>
-        <?php echo '<img src="'.$annonce->cheminImg.'" alt=""/>';?>
+<?php while($row = $result->fetch(PDO::FETCH_ASSOC)) : ?>
 
-      </div>
+    
+<div class="card">
+  <div class="card-body">
+
+
+      <h4><?php echo htmlspecialchars($row['ville']); ?></h4>
+      <h5><?php echo htmlspecialchars($row['type_logement']); ?></h5>
+      <h6><?php echo htmlspecialchars($row['nbr_voyageur']); ?> /voyageur</h6>
+      <h6><?php echo htmlspecialchars($row['prix']); ?> €/nuit</H6>
+      <h5><?php echo htmlspecialchars($row['adresse']); ?></h5>
+      <?php echo '<img src="'.($row['cheminImg']).'" alt=""/>'; ?>
+
     </div>
+</div>
 
 
-  <?php }?>
+ 
+  <?php endwhile; ?>
 
 </section>
  

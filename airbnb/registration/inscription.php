@@ -35,7 +35,11 @@
 
 
     <?php 
+        
         require('inscriptionbd.php');
+
+       
+       
         if(isset($_REQUEST['prenom'],$_REQUEST['nom'],$_REQUEST['sexe'],$_REQUEST['sexe'],$_REQUEST['ville'],$_REQUEST['numtel'],$_REQUEST['password'],$_REQUEST['email'],$_REQUEST['pays'])){
             $prenom = stripslashes($_REQUEST['prenom']);
             $prenom = mysqli_real_escape_string($conn, $prenom);
@@ -60,13 +64,17 @@
 
             $pays = stripslashes($_REQUEST['pays']);
             $pays = mysqli_real_escape_string($conn, $pays);
+            
 
-                $query = "INSERT into `users` (prenom, nom, sexe, ville, numtel, password, email, pays)
+
+                $query = "INSERT INTO `users` (prenom, nom, sexe, ville, numtel, password, email, pays)
                             VALUES('$prenom', '$nom', '$sexe', '$ville','$numtel','$password','$email','$pays')";
-                $res = mysqli_query($conn, $query);
+                $res = mysqli_query($conn,$query);
+                echo $res;
 
                 if($res){
                     echo "Vous êtes inscrit";
+                   
                 }
 
         }else{
@@ -83,6 +91,11 @@
                     <input type="password" class="box-input" name="password" placeholder="password" required />
                     <input type="text" class="box-input" name="email" placeholder="email" required />
                     <input type="submit" class="box-input" name="submit" value="S'incrire" class="box-button"/>
+                    
+                    <div class="form-group">
+         
+        </div>
+
                     <p class="box-register">Déjà inscrit? <a href="connexion.php">Connectez-vous ici</a></p>
 
 

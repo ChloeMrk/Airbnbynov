@@ -1,23 +1,6 @@
-<?php include("inc/header.inc.php")?>
+<?php include("inc/header.inc.php");?>
   <body>
-  <div class="top-nav clearfix">
-      <a href="index.php">
-        <img src="assets/img/airbnb.svg" alt="airbnb" class="logo" />
-      </a>
-      <div id="nav-search-wrapper">
-      <form method="GET" action="index.php">
-        <input type="text" name="nav-search" id="nav-search" placeholder="Search">
-      </form>
-    </div>
-
-    <ul>
-      <li><a href="annoncesform.php">Héberger des voyageurs</a></li>
-      <li><a href="#">Créer une expérience</a></li>
-      <li><a href="#">Aide</a></li>
-      <li><a href="registration/connexion.php">Mon compte</a></li>
-    </ul>
-
-    
+  <?php include("inc/navco.inc.php");?>
    
     <div class="wrapper">
 
@@ -35,6 +18,28 @@
 </div>
 
 </div>
+
+<?php 
+
+  $pdo = new PDO("mysql:host=localhost; dbname=registration", "root","",);
+  $result = $pdo->query("SELECT * FROM annonces WHERE delection_flag = 0");
+  while($annonce = $result -> fetch(PDO::FETCH_OBJ)){?>
+
+<section class="product">
+  <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><?php echo $annonce->ville?></h5>
+        <h6 class="card-title"><?php echo $annonce->type_logement?></h6>
+        <h6 class="card-title"><?php echo $annonce->prix?>€/nuit</h6>
+        <?php echo '<img src="'.$annonce->cheminImg.'" alt=""/>';?>
+
+      </div>
+    </div>
+
+
+  <?php }?>
+
+</section>
     
   </body>
 </html>
